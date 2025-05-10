@@ -10,17 +10,18 @@ export default function Home() {
       transition={{ duration: 0.6 }}
       className="flex min-h-screen flex-col items-center justify-center px-4"
     >
+      <img
+        src="/Sam personal DP.PNG" // ✅ Make sure your image is named like this and placed inside public/
+        alt="Sameer Taneja"
+        className="w-32 h-32 rounded-full object-cover mx-auto mb-6 shadow-md"
+      />
+
       <motion.h1
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
         className="text-4xl md:text-6xl font-bold text-center mb-4"
       >
-        <img 
-  src="/Sam personal DP.PNG" 
-  alt="Sameer Taneja" 
-  className="w-32 h-32 rounded-full mx-auto mb-6"
-/>
         Sameer Taneja (Sam)
       </motion.h1>
 
