@@ -16,6 +16,11 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="text-4xl md:text-6xl font-bold text-center mb-4"
       >
+        <img 
+  src="/sameer.jpg" 
+  alt="Sameer Taneja" 
+  className="w-32 h-32 rounded-full mx-auto mb-6"
+/>
         Sameer Taneja (Sam)
       </motion.h1>
 
