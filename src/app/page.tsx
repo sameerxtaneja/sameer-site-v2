@@ -8,11 +8,11 @@ export default function Home() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex min-h-screen flex-col items-center justify-center px-4"
+      className="flex min-h-screen flex-col items-center justify-center px-4 bg-gray-50"
     >
       <img
-        src="/Sam personal DP.PNG" // ✅ Make sure your image is named like this and placed inside public/
-        alt="Sameer Taneja"
+        src="/Sam personal DP.PNG"
+        alt="Sameer Taneja (Sam)"
         className="w-32 h-32 rounded-full object-cover mx-auto mb-6 shadow-md"
       />
 
@@ -58,7 +58,7 @@ export default function Home() {
             key={name}
             href={link}
             target="_blank"
-            className="px-4 py-2 border rounded"
+            className="px-4 py-2 border rounded hover:bg-black hover:text-white transition"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -91,8 +91,7 @@ export default function Home() {
           {[
             {
               title: 'SuperTeacher',
-              desc: `India’s first AI grading tool for teachers. Upload scanned answer sheets,
-              get instant grading based on CBSE rubrics.`,
+              desc: `India’s first AI grading tool for teachers. Upload scanned answer sheets, get instant grading based on CBSE rubrics.`,
               role: 'Founder · 2025',
             },
             {
@@ -108,7 +107,7 @@ export default function Home() {
           ].map(({ title, desc, role }) => (
             <motion.div
               key={title}
-              className="border rounded p-4 text-left shadow-sm"
+              className="border rounded p-4 text-left shadow-sm hover:shadow-md transition"
               whileHover={{ scale: 1.02 }}
             >
               <h3 className="text-xl font-bold">{title}</h3>
@@ -120,6 +119,8 @@ export default function Home() {
           ))}
         </div>
       </motion.section>
+
+      <div className="mt-20 text-sm text-gray-400 animate-bounce">scroll down ↓</div>
     </motion.main>
   );
 }
