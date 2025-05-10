@@ -17,7 +17,7 @@ export default function Home() {
         className="text-4xl md:text-6xl font-bold text-center mb-4"
       >
         <img 
-  src="/sameer.jpg" 
+  src="/Sam personal DP.PNG" 
   alt="Sameer Taneja" 
   className="w-32 h-32 rounded-full mx-auto mb-6"
 />
