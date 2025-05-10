@@ -23,6 +23,37 @@ export default function Home() {
           <br />Living in Gurgaon, working out of my apartment, talking to teachers every day, and shipping product weekly.
         </p>
       </section>
+
+      <section className="mt-16 max-w-2xl text-center">
+  <h2 className="text-2xl font-semibold mb-4">Things I’ve Built</h2>
+  
+  <div className="space-y-8">
+    <div className="border rounded p-4 text-left shadow-sm">
+      <h3 className="text-xl font-bold">SuperTeacher</h3>
+      <p className="text-gray-700">
+        India’s first AI grading tool for teachers. Upload scanned answer sheets,
+        get instant grading based on CBSE rubrics. <br />
+        <span className="text-sm text-gray-500">Founder · 2025</span>
+      </p>
+    </div>
+
+    <div className="border rounded p-4 text-left shadow-sm">
+      <h3 className="text-xl font-bold">Ripen</h3>
+      <p className="text-gray-700">
+        Community-led feedback platform for startups. YC W24 interview stage. <br />
+        <span className="text-sm text-gray-500">Co-founder · 2023</span>
+      </p>
+    </div>
+
+    <div className="border rounded p-4 text-left shadow-sm">
+      <h3 className="text-xl font-bold">Longevity Club</h3>
+      <p className="text-gray-700">
+        A private community for health-obsessed founders to track bloodwork and performance. <br />
+        <span className="text-sm text-gray-500">Founder · 2023</span>
+      </p>
+    </div>
+  </div>
+</section>
     </main>
   );
 }
