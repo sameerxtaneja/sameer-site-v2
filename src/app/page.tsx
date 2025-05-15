@@ -20,12 +20,12 @@ export default function Home() {
       {/* Layout Container */}
       <div className="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center md:items-start justify-center gap-10">
         {/* Left: Image + Links */}
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-2.5">
           <Image
             src="/sameer.jpg"
             alt="Sameer Taneja"
-            width={280}
-            height={280}
+            width={230}
+            height={230}
             className="rounded-lg shadow-lg object-cover"
           />
 
@@ -49,7 +49,7 @@ export default function Home() {
         {/* Right: Text */}
         <div className="text-lg space-y-2 text-center md:text-left">
           <h1 className="text-4xl font-bold tracking-tight">
-            Sameer Taneja ~ (sam)*
+            Sameer Taneja
           </h1>
           <p>entrepreneur ~ in the making.</p>
           
