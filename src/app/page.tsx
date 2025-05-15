@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import ThemeToggle from '../components/ThemeToggle';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -8,119 +10,57 @@ export default function Home() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex min-h-screen flex-col items-center justify-center px-4 bg-gray-50"
+      className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-500 font-canela"
     >
-      <img
-        src="/Sam personal DP.PNG"
-        alt="Sameer Taneja (Sam)"
-        className="w-32 h-32 rounded-full object-cover mx-auto mb-6 shadow-md"
-      />
+      {/* Toggle Button */}
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
 
-      <motion.h1
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl md:text-6xl font-bold text-center mb-4"
-      >
-        Sameer Taneja (Sam)
-      </motion.h1>
+      {/* Layout Container */}
+      <div className="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center md:items-start justify-center gap-10">
+        {/* Left: Image + Links */}
+        <div className="flex flex-col items-center space-y-4">
+          <Image
+            src="/sameer.jpg"
+            alt="Sameer Taneja"
+            width={280}
+            height={280}
+            className="rounded-lg shadow-lg object-cover"
+          />
 
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-lg md:text-xl text-gray-600 text-center max-w-xl"
-      >
-        showing up, building things, not settling.
-      </motion.p>
+          {/* Social Links */}
+          <div className="text-sm space-x-3 underline text-center">
+            <a href="https://twtr.openinapp.co/z8ltg" target="_blank" className="hover:-translate-y-0.5 transition-transform duration-200">x.</a>
+            <a href="https://insta.openinapp.co/308hv" target="_blank" className="hover:-translate-y-0.5 transition-transform duration-200">ig.</a>
+            <a href="https://yt.openinapp.co/cy0lk" target="_blank" className="hover:-translate-y-0.5 transition-transform duration-200">yt.</a>
+            <a href="https://linkedin.openinapp.co/0opyb" target="_blank" className="hover:-translate-y-0.5 transition-transform duration-200">in.</a>
+            <a href="https://openinapp.link/sdqvx" target="_blank" className="hover:-translate-y-0.5 transition-transform duration-200">gh.</a>
+          </div>
 
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, y: 10 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { staggerChildren: 0.1 }
-          }
-        }}
-        className="mt-6 flex gap-4 flex-wrap justify-center"
-      >
-        {[
-          { name: 'Instagram', link: 'https://insta.openinapp.co/308hv' },
-          { name: 'X', link: 'https://twtr.openinapp.co/z8ltg' },
-          { name: 'LinkedIn', link: 'https://linkedin.openinapp.co/0opyb' },
-          { name: 'YouTube', link: 'https://yt.openinapp.co/cy0lk' },
-          { name: 'GitHub', link: 'https://openinapp.link/sdqvx' },
-        ].map(({ name, link }) => (
-          <motion.a
-            key={name}
-            href={link}
-            target="_blank"
-            className="px-4 py-2 border rounded hover:bg-black hover:text-white transition"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {name}
-          </motion.a>
-        ))}
-      </motion.div>
-
-      <motion.section
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-12 max-w-2xl text-center"
-      >
-        <h2 className="text-2xl font-semibold mb-2">What I’m doing now</h2>
-        <p className="text-gray-700 text-lg">
-          Building <strong>SuperTeacher</strong> — India’s first AI grading tool for schools and tutors.
-          <br />Living in Gurgaon, working out of my apartment, talking to teachers every day, and shipping product weekly.
-        </p>
-      </motion.section>
-
-      <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="mt-16 max-w-2xl text-center"
-      >
-        <h2 className="text-2xl font-semibold mb-4">Things I’ve Built</h2>
-        <div className="space-y-8">
-          {[
-            {
-              title: 'SuperTeacher',
-              desc: `India’s first AI grading tool for teachers. Upload scanned answer sheets, get instant grading based on CBSE rubrics.`,
-              role: 'Founder · 2025',
-            },
-            {
-              title: 'Ripen',
-              desc: `Community-led feedback platform for startups. YC W24 interview stage.`,
-              role: 'Co-founder · 2023',
-            },
-            {
-              title: 'Longevity Club',
-              desc: `A private community for health-obsessed founders to track bloodwork and performance.`,
-              role: 'Founder · 2023',
-            },
-          ].map(({ title, desc, role }) => (
-            <motion.div
-              key={title}
-              className="border rounded p-4 text-left shadow-sm hover:shadow-md transition"
-              whileHover={{ scale: 1.02 }}
-            >
-              <h3 className="text-xl font-bold">{title}</h3>
-              <p className="text-gray-700">
-                {desc} <br />
-                <span className="text-sm text-gray-500">{role}</span>
-              </p>
-            </motion.div>
-          ))}
+          {/* Subpage Links */}
+          <div className="text-sm space-x-3 text-center">
+            <a href="/life-story" className="underline hover:text-black dark:hover:text-white hover:-translate-y-0.5 transition-transform duration-200">life story.</a>
+            <a href="/beliefs" className="underline hover:text-black dark:hover:text-white hover:-translate-y-0.5 transition-transform duration-200">beliefs.</a>
+            <a href="/thoughts" className="underline hover:text-black dark:hover:text-white hover:-translate-y-0.5 transition-transform duration-200">thoughts.</a>
+          </div>
         </div>
-      </motion.section>
 
-      <div className="mt-20 text-sm text-gray-400 animate-bounce">scroll down ↓</div>
+        {/* Right: Text */}
+        <div className="text-lg space-y-2 text-center md:text-left">
+          <h1 className="text-4xl font-bold tracking-tight">
+            Sameer Taneja ~ (sam)*
+          </h1>
+          <p>entrepreneur ~ in the making.</p>
+          
+          <p>25 years into the game of life.</p>
+          <p>a product of grit & consistency.</p>
+          <p>love doing hard things ~ peaks, marathons, ice-baths, you name it...</p>
+          <p>currently building an AI company ~ in stealth.</p>
+          <p>simultaneously, documenting my journey to greatness.</p>
+          <p>playing w the body & mind, obsessed with the science of being human..</p>
+        </div>
+      </div>
     </motion.main>
   );
 }

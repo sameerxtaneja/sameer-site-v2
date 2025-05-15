@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Load Canela Regular */
+@font-face {
+  font-family: 'Canela';
+  src: url('/fonts/CanelaDeck-Regular-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Load Canela Bold */
+@font-face {
+  font-family: 'Canela';
+  src: url('/fonts/CanelaDeck-Bold-Trial.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Canela', serif;
   background: #ffffff;
   color: #111111;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

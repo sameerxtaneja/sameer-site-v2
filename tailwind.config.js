@@ -1,9 +1,15 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        canela: ['Canela', 'Georgia', 'serif'], // <-- use className="font-canela"
+      },
+    },
   },
   plugins: [],
 }
